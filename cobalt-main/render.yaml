@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: cobalt-api
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /
+    envVars:
+      - key: API_URL
+        sync: false
+      - key: CORS_WILDCARD
+        value: "1"
+      - key: API_INSTANCE_COUNT
+        value: "1"
